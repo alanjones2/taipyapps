@@ -1,4 +1,4 @@
-Certainly! Here's a description of the complete app:
+
 
 ### CO2 Emissions Visualization App
 

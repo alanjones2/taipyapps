@@ -100,7 +100,7 @@ with tgb.Page() as page:
         with tgb.part():
             # header
             tgb.text("#### Total global emissions for {year}:", mode='md')
-            tgb.text("##### {int(df_world[df_world['Year']==year]['Annual CO₂ emissions'])} tonnes", mode='md')            
+            tgb.text("##### {int(df_world[df_world['Year']==year]['Annual CO₂ emissions'].iloc[0])} tonnes", mode='md')            
             tgb.text("---", mode='md')
             # data
             tgb.text(value="#### World temperature data", mode='md')

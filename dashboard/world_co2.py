@@ -88,27 +88,37 @@ with tgb.Page() as page:
     tgb.text("---", mode='md')
 
     # Left column contains the choropleth and the right one the data
-    with tgb.layout(columns="2 1"):
+    with tgb.layout(columns="3 2"):
         # choropleth and slider to select year
         with tgb.part():
-            with tgb.layout(columns="2 1"):
-                tgb.text(value="#### Use the slider to select a year", mode='md')
-                tgb.text("### {year}", mode='md')
-            tgb.slider(value="{year}",min=ymin, max=ymax, on_change=update_data)
+            with tgb.layout(columns="1 1"):
+                with tgb.part():
+                    tgb.text(value="#### Use the slider to select a year", mode='md')
+                    tgb.slider(value="{year}",min=ymin, max=ymax, on_change=update_data)                    
+                with tgb.part():
+                    #tgb.text("### {year}", mode='md')
+                    tgb.text("#### Total global emissions for {year}:", mode='md')
+                    tgb.text("##### {int(df_world[df_world['Year']==year]['Annual CO₂ emissions'].iloc[0])} tonnes", mode='md')            
+            
+                
+
             tgb.chart(figure="{fig}")
         # A header with the global emissions per year and the data for the selected country/year
         with tgb.part():
             # header
-            tgb.text("#### Total global emissions for {year}:", mode='md')
-            tgb.text("##### {int(df_world[df_world['Year']==year]['Annual CO₂ emissions'].iloc[0])} tonnes", mode='md')            
-            tgb.text("---", mode='md')
+            #tgb.text("#### Total global emissions for {year}:", mode='md')
+            #tgb.text("##### {int(df_world[df_world['Year']==year]['Annual CO₂ emissions'].iloc[0])} tonnes", mode='md')            
+            #tgb.text("---", mode='md')
             # data
             tgb.text(value="#### World temperature data", mode='md')
-            tgb.selector(value="{countries}", lov="{all_countries}", multiple=True,dropdown=True, width=1000 ,on_change=update_data)            
-            tgb.table("{df_working_list}")
+            tgb.text(value="##### Select or reject countries from the dropdown list", mode='md')
+            with tgb.layout(columns="1 2"):
+                tgb.selector(value="{countries}", lov="{all_countries}", multiple=True,dropdown=True, width=1000 ,on_change=update_data)            
+                #tgb.table("{df_working_list}")
+                tgb.chart("{df_working_list}", type="bar", x="Entity", y=col)
 
     # footer with acknowledgement
-    tgb.text("Global CO2 Emission Data from {ymin} to {ymax}. Data derived, with thanks, from  [Our World in Data](https://ourworldindata.org/)", mode='md')
+    tgb.text("Global CO2 Emission Data from {ymin} to {ymax}. Data derived from  [Our World in Data](https://ourworldindata.org/) (with thanks)", mode='md')
 
 #Run the app
 Gui(page=page).run()

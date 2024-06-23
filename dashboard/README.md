@@ -8,14 +8,14 @@ This folder contains the code and data to support the article above.
 
 ## Description and files
 
-We explore chart creation using OpenAI's Assistants and Code Interpreter.
+An interactive dashboard in Taipy using Taipy GUI Builder to define the GUI in Python.
 
 _Files_
 
 - the Taipy app is in the file `world_co2.py`
 - ``*.csv`` are the data files
 - ``data.ipynb`` is simply so that I could get a screenshot of the dataframe
-- the files in the image folder are from th article
+- the files in the image folder are from the article
 
 ---
 ### If you find this content useful, please consider one or more of the following:

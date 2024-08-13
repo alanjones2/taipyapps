@@ -16,9 +16,9 @@ import plotly.express as px
 
 # Define the global (state) data 
 
-df_all_countries = pd.read_csv('co2_total.csv')
+df_all_countries = pd.read_csv('data/co2_total.csv')
 df_all_countries = df_all_countries.drop(columns=['Unnamed: 0'])
-df_world = pd.read_csv('co2_total_world.csv')
+df_world = pd.read_csv('data/co2_total_world.csv')
 df_world = df_world.drop(columns=['Unnamed: 0'])
 
 col = 'Annual CO₂ emissions'            # the column that contains the emissions data

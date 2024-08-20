@@ -1,6 +1,6 @@
 from taipy.gui import Gui
 #from pages.home import home_md
-from pages.home2 import page as home_page
+from pages.home2 import page as homepage
 from pages.CO2_src_chart import page as co2page
 from pages.av_temp_map import page as temppage
 
@@ -12,7 +12,7 @@ _Made with Taipy_
 
 pages = {
     "/": root_md,
-    "home": home_page,
+    "home": homepage,
     "CO2_Sources": co2page,
     "Average_World_Temperatures":temppage,
 }

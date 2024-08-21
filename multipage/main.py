@@ -1,6 +1,5 @@
 from taipy.gui import Gui
-#from pages.home import home_md
-from pages.home2 import page as homepage
+from pages.home import page as homepage
 from pages.CO2_src_chart import page as co2page
 from pages.av_temp_map import page as temppage
 

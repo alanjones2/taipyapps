@@ -15,4 +15,4 @@ pages = {
     "page2": page2,
 }
 
-Gui(pages=pages).run(dark_mode=False)
+Gui(pages=pages).run(dark_mode=True)

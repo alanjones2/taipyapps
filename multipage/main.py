@@ -16,4 +16,4 @@ pages = {
     "Average_World_Temperatures":temppage,
 }
 
-Gui(pages=pages).run(dark_mode=True)
+Gui(pages=pages).run(dark_mode=False)

@@ -31,6 +31,8 @@ def plot_choro(year):
 
     return fig
 
+fig = plot_choro(year_max)
+
 def on_slider(state, var, val):    
     state.fig = plot_choro(val)
 

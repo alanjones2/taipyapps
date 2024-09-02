@@ -1,4 +1,3 @@
-from taipy import Gui
 from taipy.gui import navigate
 import taipy.gui.builder as tgb
 

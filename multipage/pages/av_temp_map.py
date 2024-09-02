@@ -1,4 +1,3 @@
-from taipy.gui import Gui 
 import taipy.gui.builder as tgb
 import pandas as pd
 import plotly.express as px

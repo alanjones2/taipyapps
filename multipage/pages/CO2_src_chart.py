@@ -1,21 +1,17 @@
-from taipy import Gui
 import taipy.gui.builder as tgb
 import pandas as pd
 import plotly.express as px
 
-
-
-def plot_chart2(df, y="Total"):
+def plot_chart(df, y):
     fig = px.bar(df, x="Year", y=y)
     return fig
 
 def on_select(state, var, val):
-    #print(var,val)
-    state.fig2 = plot_chart2(df2, y=val)
+    state.fig2 = plot_chart(state.df, y=val)
 
-df2 = pd.read_csv("data/co2-emissions-by-category.csv") 
+df = pd.read_csv("data/co2-emissions-by-category.csv") 
 src = "Total"
-fig2 = plot_chart2(df2)
+fig2 = plot_chart(df, src)
 
 with tgb.Page() as page:
     tgb.text( value = "### CO2 Emissions by source since the mid-19th Century", mode = 'md', class_name="color-secondary")

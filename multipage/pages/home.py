@@ -6,7 +6,6 @@ def on_button_press(state, id):
     page = "home"
     if id == "CO2": page = "CO2_Sources" 
     if id == "CO2Country": page = "CO2_by_Country"
-    print(id,page)
     navigate(state, to=page)
 
 with tgb.Page() as page:
